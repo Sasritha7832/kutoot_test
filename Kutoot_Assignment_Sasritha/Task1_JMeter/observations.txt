@@ -1,0 +1,16 @@
+JMeter Load Test - Key Observations
+URL Tested: https://jsonplaceholder.typicode.com/posts
+Users: 50 concurrent | Samples: 100 | Tool: Apache JMeter 5.6.3
+
+Observation 1 - Response Time:
+The system handled 100 requests from 50 concurrent users with an average
+response time of 180ms (min: 137ms, max: 705ms), indicating stable
+performance under moderate load.
+
+Observation 2 - Zero Error Rate:
+Error rate was 0.00% across all 100 samples, confirming the target URL
+is fully stable and reliable under the simulated 50-user load.
+
+Observation 3 - Throughput:
+The system achieved a throughput of 3.6 requests/sec with 100.04 KB/sec
+received. All requests in View Results Tree show green ticks — zero failures.
