@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sasritha Reddy Mukkamalla — CS & AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --white: #ffffff;
+  --off: #f7f7f5;
+  --light: #efefec;
+  --border: #e4e4e0;
+  --text: #1a1a18;
+  --muted: #777770;
+  --blue: #2563eb;
+}
+body { background: var(--white); color: var(--text); font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 6vw; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: 'Instrument Serif', serif; font-size: 1.15rem; color: var(--text); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--text); display: block; }
+
+/* HERO */
+#home { min-height: 100vh; display: flex; align-items: center; padding: 8rem 6vw 5rem; border-bottom: 1px solid var(--border); }
+.hero-grid { width: 100%; max-width: 1100px; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.4rem; display: flex; align-items: center; gap: .6rem; animation: fadeUp .6s ease both; }
+.hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
+h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 5.5vw, 4.8rem); line-height: 1.08; letter-spacing: -.02em; animation: fadeUp .6s .08s ease both; }
+h1 em { font-style: italic; color: var(--muted); }
+.hero-desc { margin-top: 1.6rem; font-size: .97rem; color: var(--muted); line-height: 1.8; max-width: 440px; animation: fadeUp .6s .16s ease both; }
+.hero-desc strong { color: var(--text); font-weight: 600; }
+.hero-cta { margin-top: 2.4rem; display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .6s .24s ease both; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.6rem; border-radius: 4px; font-family: 'Manrope', sans-serif; font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-decoration: none; transition: all .2s; cursor: pointer; border: none; }
+.btn-dark { background: var(--text); color: var(--white); }
+.btn-dark:hover { background: #333; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn-outline:hover { border-color: var(--text); transform: translateY(-1px); }
+.hero-right { animation: fadeUp .6s .1s ease both; }
+.stats-block { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 2.4rem; }
+.stats-block h3 { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.8rem; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+.stat { display: flex; flex-direction: column; gap: .3rem; }
+.stat-n { font-family: 'Instrument Serif', serif; font-size: 2.4rem; line-height: 1; color: var(--text); }
+.stat-l { font-size: .78rem; color: var(--muted); font-weight: 500; }
+.hero-links { margin-top: 1.2rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: .4rem; padding: .45rem 1rem; border: 1px solid var(--border); border-radius: 100px; font-size: .78rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: all .2s; background: var(--white); }
+.pill:hover { border-color: var(--text); color: var(--text); }
+
+/* SECTIONS */
+section { padding: 6rem 6vw; border-bottom: 1px solid var(--border); }
+.sec-header { margin-bottom: 4rem; }
+.sec-num { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: .8rem; display: flex; align-items: center; gap: .6rem; }
+.sec-num::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
+h2 { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -.02em; }
+h2 em { font-style: italic; color: var(--muted); }
+
+/* ABOUT */
+#about { background: var(--off); }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+.about-text p { font-size: .97rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.2rem; }
+.about-text p strong { color: var(--text); font-weight: 600; }
+.about-cards { display: flex; flex-direction: column; gap: .8rem; }
+.acard { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; display: flex; align-items: flex-start; gap: 1rem; transition: border-color .2s; }
+.acard:hover { border-color: var(--text); }
+.acard-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+.acard-title { font-weight: 600; font-size: .88rem; margin-bottom: .2rem; }
+.acard-text { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+/* SKILLS */
+#skills { background: var(--white); }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.sg { border: 1px solid var(--border); border-radius: 8px; padding: 1.6rem; transition: border-color .2s; }
+.sg:hover { border-color: var(--text); }
+.sg-title { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text); margin-bottom: 1.2rem; padding-bottom: .8rem; border-bottom: 1px solid var(--border); }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag { background: var(--off); border-radius: 4px; padding: .28rem .7rem; font-size: .76rem; color: var(--muted); font-weight: 500; transition: all .2s; cursor: default; }
+.tag:hover { background: var(--text); color: var(--white); }
+
+/* PROJECTS */
+#projects { background: var(--off); }
+.projects-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.pcard { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: 1fr auto; transition: border-color .2s, box-shadow .2s; }
+.pcard:hover { border-color: var(--text); box-shadow: 0 4px 24px rgba(0,0,0,.06); }
+.pcard-body { padding: 2rem 2.4rem; }
+.pcard-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.pcard-tag { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); background: rgba(37,99,235,0.07); border-radius: 3px; padding: .2rem .6rem; }
+.pcard-year { font-size: .78rem; color: var(--muted); }
+.pcard-title { font-family: 'Instrument Serif', serif; font-size: 1.5rem; line-height: 1.2; margin-bottom: .5rem; }
+.pcard-sub { font-size: .84rem; color: var(--blue); font-weight: 500; margin-bottom: .9rem; }
+.pcard-desc { font-size: .88rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.4rem; max-width: 600px; }
+.pcard-metrics { display: flex; gap: 2rem; margin-bottom: 1.4rem; }
+.pm { display: flex; flex-direction: column; gap: .2rem; }
+.pm-val { font-family: 'Instrument Serif', serif; font-size: 1.5rem; color: var(--text); line-height: 1; }
+.pm-key { font-size: .72rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+.pcard-side { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; border-left: 1px solid var(--border); min-width: 160px; background: var(--off); }
+.pcard-stacks { display: flex; flex-direction: column; gap: .4rem; }
+.pcard-stack { font-size: .74rem; color: var(--muted); text-align: right; }
+.pcard-link { font-size: .78rem; font-weight: 600; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: .3rem; border-bottom: 1px solid var(--text); padding-bottom: 1px; transition: gap .2s; }
+.pcard-link:hover { gap: .6rem; }
+
+/* CONTACT */
+#contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-text p { font-size: .97rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+.clinks { display: flex; flex-direction: column; gap: .7rem; }
+.clink { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: all .2s; background: var(--off); }
+.clink:hover { border-color: var(--text); background: var(--white); }
+.clink-icon { font-size: 1rem; flex-shrink: 0; }
+.clink-label { font-size: .72rem; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.clink-val { font-size: .85rem; color: var(--text); font-weight: 500; }
+.cform { display: flex; flex-direction: column; gap: 1rem; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cf-group { display: flex; flex-direction: column; gap: .4rem; }
+.cf-label { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cf-input, .cf-textarea { background: var(--off); border: 1px solid var(--border); border-radius: 6px; padding: .8rem 1rem; font-family: 'Manrope', sans-serif; font-size: .88rem; color: var(--text); outline: none; transition: border-color .2s; resize: vertical; }
+.cf-input:focus, .cf-textarea:focus { border-color: var(--text); background: var(--white); }
+.cf-textarea { min-height: 110px; }
+#cf-ok { font-size: .82rem; color: var(--blue); font-weight: 500; display: none; }
+
+/* FOOTER */
+footer { padding: 2rem 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); }
+.footer-name { font-family: 'Instrument Serif', serif; font-size: 1rem; }
+.footer-copy { font-size: .78rem; color: var(--muted); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pcard { grid-template-columns: 1fr; }
+  .pcard-side { border-left: none; border-top: 1px solid var(--border); flex-direction: row; min-width: unset; align-items: center; }
+  .pcard-stacks { flex-direction: row; flex-wrap: wrap; gap: .5rem; }
+  .pcard-stack { text-align: left; }
+  .cf-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); padding: 1.5rem 6vw; gap: 1.2rem; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .skills-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Sasritha Reddy</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" onclick="closeNav()">Home</a></li>
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+    <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+    <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="ham" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="home">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Open to Opportunities</div>
+      <h1>CS & AI/ML<br><em>Engineer</em></h1>
+      <p class="hero-desc">Final-year Computer Science student at <strong>NHCE Bengaluru</strong> with a GPA of <strong>9.31/10</strong>. I build end-to-end AI systems, full-stack platforms, and everything in between.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-dark">View Projects →</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stats-block">
+        <h3>At a Glance</h3>
+        <div class="stats-grid">
+          <div class="stat"><span class="stat-n">9.31</span><span class="stat-l">GPA out of 10</span></div>
+          <div class="stat"><span class="stat-n">300+</span><span class="stat-l">DSA Problems</span></div>
+          <div class="stat"><span class="stat-n">30+</span><span class="stat-l">Students Mentored</span></div>
+          <div class="stat"><span class="stat-n">3</span><span class="stat-l">AI Projects Shipped</span></div>
+        </div>
+      </div>
+      <div class="hero-links">
+        <a href="https://linkedin.com/in/sasritha-reddy" target="_blank" class="pill">↗ LinkedIn</a>
+        <a href="https://github.com/Sasritha7832" target="_blank" class="pill">↗ GitHub</a>
+        <a href="mailto:sasrithareddymukkamalla@gmail.com" class="pill">✉ Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-header reveal">
+    <div class="sec-num">01 — About</div>
+    <h2>Who I <em>Am</em></h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm a final-year <strong>Computer Science Engineering</strong> student at New Horizon College of Engineering, Bengaluru, graduating June 2026. I consistently rank in the <strong>top 10% of my cohort</strong> with a GPA of 9.31/10.</p>
+      <p>I build things end-to-end — from <strong>GenAI-powered QA systems</strong> that reduce manual effort by 70%, to full-stack platforms supporting 100+ concurrent users. I take full ownership from design to deployment.</p>
+      <p>I'm deeply curious about the intersection of <strong>AI/ML and product engineering</strong> — exploring RAG pipelines, LLM integrations, OCR systems, and scalable REST API design.</p>
+      <p>Outside engineering, I served as a <strong>Reliance Foundation Student Mentor</strong>, guiding 30+ students through technical and career development in 2024.</p>
+    </div>
+    <div class="about-cards">
+      <div class="acard"><span class="acard-icon">🎓</span><div><div class="acard-title">New Horizon College of Engineering</div><div class="acard-text">B.E. Computer Science · GPA 9.31/10 · 2022 – 2026 · Bengaluru</div></div></div>
+      <div class="acard"><span class="acard-icon">🧠</span><div><div class="acard-title">AI / ML Focus</div><div class="acard-text">RAG Pipelines · LLaMA 3 · Gemini API · FAISS · LangChain · scikit-learn</div></div></div>
+      <div class="acard"><span class="acard-icon">🏆</span><div><div class="acard-title">Reliance Foundation Mentor</div><div class="acard-text">Mentored 30+ students in technical and career development (2024)</div></div></div>
+      <div class="acard"><span class="acard-icon">📜</span><div><div class="acard-title">Certifications</div><div class="acard-text">NPTEL AI Fundamentals · IBM Cloud · JavaScript — IIT Bombay Spoken Tutorial</div></div></div>
+      <div class="acard"><span class="acard-icon">⚡</span><div><div class="acard-title">Currently Exploring</div><div class="acard-text">Databricks · PowerApps · PowerAutomate · SharePoint</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-header reveal">
+    <div class="sec-num">02 — Skills</div>
+    <h2>Tech <em>Stack</em></h2>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="sg"><div class="sg-title">Languages</div><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">C</span><span class="tag">HTML5</span><span class="tag">CSS</span></div></div>
+    <div class="sg"><div class="sg-title">AI / ML</div><div class="tags"><span class="tag">LangChain</span><span class="tag">LLaMA 3</span><span class="tag">Gemini API</span><span class="tag">OpenAI API</span><span class="tag">HuggingFace</span><span class="tag">FAISS</span><span class="tag">RAG Pipelines</span><span class="tag">scikit-learn</span><span class="tag">Tesseract OCR</span><span class="tag">OpenCV</span></div></div>
+    <div class="sg"><div class="sg-title">Frameworks</div><div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Streamlit</span><span class="tag">Socket.io</span><span class="tag">Pandas</span><span class="tag">NumPy</span></div></div>
+    <div class="sg"><div class="sg-title">Databases</div><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span><span class="tag">JSON</span><span class="tag">XML</span></div></div>
+    <div class="sg"><div class="sg-title">Tools & Platforms</div><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Linux</span><span class="tag">VS Code</span><span class="tag">Postman</span><span class="tag">Databricks</span><span class="tag">PowerApps</span><span class="tag">SharePoint</span></div></div>
+    <div class="sg"><div class="sg-title">Professional</div><div class="tags"><span class="tag">System Design</span><span class="tag">Agile</span><span class="tag">Technical Writing</span><span class="tag">Mentoring</span><span class="tag">Code Review</span><span class="tag">SDLC</span></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-header reveal">
+    <div class="sec-num">03 — Projects</div>
+    <h2>What I've <em>Built</em></h2>
+  </div>
+  <div class="projects-list reveal">
+
+    <div class="pcard">
+      <div class="pcard-body">
+        <div class="pcard-meta"><span class="pcard-tag">GenAI · AI/ML</span><span class="pcard-year">Dec 2025 – Feb 2026</span></div>
+        <div class="pcard-title">AutoQA-AI</div>
+        <div class="pcard-sub">GenAI-Powered Automated Test Case Generator</div>
+        <p class="pcard-desc">End-to-end AI solution using a LangChain RAG pipeline with FAISS vector search, auto-generating context-aware test cases. Integrated LLaMA 3 and Gemini API with language translation support, and an OCR pipeline using OpenCV and Tesseract for pixel-level UI validation. Achieved 87% accuracy with a supervised Random Forest classifier.</p>
+        <div class="pcard-metrics">
+          <div class="pm"><span class="pm-val">~90%</span><span class="pm-key">Test accuracy</span></div>
+          <div class="pm"><span class="pm-val">~70%</span><span class="pm-key">Effort reduced</span></div>
+          <div class="pm"><span class="pm-val">87%</span><span class="pm-key">RF classifier</span></div>
+        </div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">LLaMA 3</span><span class="tag">Gemini API</span><span class="tag">FAISS</span><span class="tag">Streamlit</span><span class="tag">OpenCV</span></div>
+      </div>
+      <div class="pcard-side">
+        <div class="pcard-stacks"><div class="pcard-stack">Python</div><div class="pcard-stack">LangChain</div><div class="pcard-stack">Streamlit</div><div class="pcard-stack">HuggingFace</div></div>
+        <a href="https://github.com/Sasritha7832" target="_blank" class="pcard-link">View →</a>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-body">
+        <div class="pcard-meta"><span class="pcard-tag">Full Stack</span><span class="pcard-year">Jan – May 2024</span></div>
+        <div class="pcard-title">CivicPulse</div>
+        <div class="pcard-sub">AI-Powered Civic Issue Reporting Platform</div>
+        <p class="pcard-desc">Real-time civic issue platform with role-based access control and live updates via Socket.io. Deployed Gemini API to auto-categorize issue images across 3 severity tiers, reducing triaging time by 60%. Optimized SQL queries to sub-100ms latency under Agile methodology.</p>
+        <div class="pcard-metrics">
+          <div class="pm"><span class="pm-val">~60%</span><span class="pm-key">Triage time cut</span></div>
+          <div class="pm"><span class="pm-val">&lt;100ms</span><span class="pm-key">SQL latency</span></div>
+          <div class="pm"><span class="pm-val">3</span><span class="pm-key">Severity tiers</span></div>
+        </div>
+        <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Socket.io</span><span class="tag">Gemini API</span><span class="tag">SQL</span><span class="tag">JWT</span></div>
+      </div>
+      <div class="pcard-side">
+        <div class="pcard-stacks"><div class="pcard-stack">React.js</div><div class="pcard-stack">Express.js</div><div class="pcard-stack">Socket.io</div><div class="pcard-stack">Cloudinary</div></div>
+        <a href="https://github.com/Sasritha7832" target="_blank" class="pcard-link">View →</a>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-body">
+        <div class="pcard-meta"><span class="pcard-tag">Full Stack · EdTech</span><span class="pcard-year">Aug – Dec 2023</span></div>
+        <div class="pcard-title">LuminaLearn</div>
+        <div class="pcard-sub">AI-Powered Adaptive Learning Platform</div>
+        <p class="pcard-desc">Engineered 12+ secure REST APIs with XML/JSON schema validation. Architected a normalized SQL schema across 8 relational tables for 100+ concurrent learners. Integrated OpenAI API for personalized learning paths, increasing engagement by 40%. Achieved zero security vulnerabilities post-deployment.</p>
+        <div class="pcard-metrics">
+          <div class="pm"><span class="pm-val">100+</span><span class="pm-key">Concurrent users</span></div>
+          <div class="pm"><span class="pm-val">~40%</span><span class="pm-key">Engagement boost</span></div>
+          <div class="pm"><span class="pm-val">12+</span><span class="pm-key">REST APIs</span></div>
+        </div>
+        <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">SQL</span><span class="tag">OpenAI API</span><span class="tag">JWT</span></div>
+      </div>
+      <div class="pcard-side">
+        <div class="pcard-stacks"><div class="pcard-stack">React.js</div><div class="pcard-stack">Node.js</div><div class="pcard-stack">MySQL</div><div class="pcard-stack">OpenAI API</div></div>
+        <a href="https://github.com/Sasritha7832" target="_blank" class="pcard-link">View →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-header reveal">
+    <div class="sec-num">04 — Contact</div>
+    <h2>Let's <em>Connect</em></h2>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="contact-text">
+      <p>I'm open to full-time roles, internships, and collaborations in software development, AI/ML engineering, and full-stack product work. Feel free to reach out.</p>
+      <div class="clinks">
+        <a href="mailto:sasrithareddymukkamalla@gmail.com" class="clink"><span class="clink-icon">✉</span><div><div class="clink-label">Email</div><div class="clink-val">sasrithareddymukkamalla@gmail.com</div></div></a>
+        <a href="https://linkedin.com/in/sasritha-reddy" target="_blank" class="clink"><span class="clink-icon">💼</span><div><div class="clink-label">LinkedIn</div><div class="clink-val">linkedin.com/in/sasritha-reddy</div></div></a>
+        <a href="https://github.com/Sasritha7832" target="_blank" class="clink"><span class="clink-icon">⌥</span><div><div class="clink-label">GitHub</div><div class="clink-val">github.com/Sasritha7832</div></div></a>
+        <a href="tel:+917893757789" class="clink"><span class="clink-icon">☎</span><div><div class="clink-label">Phone</div><div class="clink-val">+91 78937 57789</div></div></a>
+      </div>
+    </div>
+    <div class="cform">
+      <div class="cf-row">
+        <div class="cf-group"><label class="cf-label">Name</label><input class="cf-input" type="text" placeholder="Your name" id="cf-name"/></div>
+        <div class="cf-group"><label class="cf-label">Email</label><input class="cf-input" type="email" placeholder="your@email.com" id="cf-email"/></div>
+      </div>
+      <div class="cf-group"><label class="cf-label">Subject</label><input class="cf-input" type="text" placeholder="Internship / Collaboration" id="cf-subject"/></div>
+      <div class="cf-group"><label class="cf-label">Message</label><textarea class="cf-textarea" placeholder="Tell me about the opportunity..." id="cf-msg"></textarea></div>
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <button class="btn btn-dark" onclick="sendMsg()">Send Message →</button>
+        <span id="cf-ok">✓ Sent!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Sasritha Reddy Mukkamalla</div>
+  <div class="footer-copy">© 2026 · Bengaluru, India</div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function closeNav() { document.getElementById('navLinks').classList.remove('open'); }
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  document.querySelectorAll('.nav-links a').forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--text)' : ''; });
+});
+function sendMsg() {
+  const n = document.getElementById('cf-name').value.trim();
+  const e = document.getElementById('cf-email').value.trim();
+  const s = document.getElementById('cf-subject').value.trim();
+  const m = document.getElementById('cf-msg').value.trim();
+  if (!n || !e || !m) { alert('Please fill all required fields.'); return; }
+  window.location.href = `mailto:sasrithareddymukkamalla@gmail.com?subject=${encodeURIComponent(s||'Portfolio Contact')}&body=${encodeURIComponent(m+'\n\nFrom: '+n+' ('+e+')')}`;
+  document.getElementById('cf-ok').style.display = 'inline';
+  ['cf-name','cf-email','cf-subject','cf-msg'].forEach(id => document.getElementById(id).value = '');
+}
+</script>
+</body>
+</html>
